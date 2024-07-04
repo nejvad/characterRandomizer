@@ -3,7 +3,20 @@ import constants
 
 
 def main():
-    for i in range(4):
+    while True:
+        print("(1) Generate Party")
+        print("(2) Exit\n")
+        user_input = input(f"Choose an option: ")
+        if user_input == "1":
+            party_size = input(f"Party size: ")
+            generate_character(int(party_size))
+        elif user_input == "2":
+            print(f"See you next time!")
+            exit()
+
+
+def generate_character(party_size):
+    for i in range(party_size):
         attributes = draw_character_stats(constants.ATTRIBUTES, 3)
         abilities = draw_character_stats(constants.ABILITIES, 2)
         civil_abilities = draw_character_stats(constants.CIVIL_ABILITIES, 2)
@@ -15,14 +28,14 @@ def main():
             undead = "Undead"
 
         print(f"""
-            Character {i + 1}
-            ==============================
-            Gender: {undead} {gender}
-            Attributes: {", ".join(attributes)}
-            Abilities: {", ".join(abilities)}
-            Civil Abilities: {", ".join(civil_abilities)}
-            Talents: {", ".join(talents)} 
-        """)
+               Character {i + 1}
+               ==============================
+               Gender: {undead} {gender}
+               Attributes: {", ".join(attributes)}
+               Abilities: {", ".join(abilities)}
+               Civil Abilities: {", ".join(civil_abilities)}
+               Talents: {", ".join(talents)} 
+            """)
 
 
 def draw_character_stats(array, amount):
