@@ -5,17 +5,28 @@ import constants
 def main():
     while True:
         print("(1) Generate Party")
-        print("(2) Exit\n")
-        user_input = input(f"Choose an option: ")
+        print("(2) Generate Talent")
+        print("(3) Exit\n")
+        user_input = input("Choose an option: ")
         if user_input == "1":
-            party_size = input(f"Party size: ")
-            generate_character(int(party_size))
+            party_size = input("Party size: ")
+
+            if check_party_size_input(party_size):
+                generate_character(int(party_size))
+            else:
+                print("Can't understand, here is a character:")
+                generate_character()
+
         elif user_input == "2":
-            print(f"See you next time!")
+            print(f"\nYour talent: {draw_talent(constants.TALENTS)}\n")
+        elif user_input == "3":
+            print("See you next time!")
             exit()
+        else:
+            print("\nWrong Input!\n")
 
 
-def generate_character(party_size):
+def generate_character(party_size=1):
     for i in range(party_size):
         attributes = draw_character_stats(constants.ATTRIBUTES, 3)
         abilities = draw_character_stats(constants.ABILITIES, 2)
@@ -47,6 +58,14 @@ def draw_character_stats(array, amount):
             picked_stats.append(current_stat)
 
     return picked_stats
+
+
+def check_party_size_input(user_input):
+    return user_input.isnumeric()
+
+
+def draw_talent(talents):
+    return choice(talents)
 
 
 if __name__ == "__main__":
