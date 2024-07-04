@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randrange
 
 GENDER = ["Male", "Female"]
 RACE = ["Human", "Elf", "Dwarf", "Lizard"]
@@ -24,31 +24,21 @@ TALENTS = ["All Skilled Up", "Ambidextrous", "Arrow Recovery", "Bigger and bette
 
 
 def main():
-    attributes = []
-    abilities = []
-    civil_abilities = []
-    talents = []
-    gender = choice(GENDER) + " " + choice(RACE)
+    for i in range(4):
+        attributes = [choice(ATTRIBUTES) for _ in range(3)]
+        abilities = [choice(ABILITIES) for _ in range(2)]
+        civil_abilities = [choice(CIVIL_ABILITIES) for _ in range(2)]
+        talents = [choice(TALENTS) for _ in range(7)]
+        gender = choice(GENDER) + " " + choice(RACE)
 
-    for _ in range(3):
-        attributes.append(choice(ATTRIBUTES))
-
-    for _ in range(2):
-        abilities.append(choice(ABILITIES))
-
-    for _ in range(2):
-        civil_abilities.append(choice(CIVIL_ABILITIES))
-
-    for _ in range(7):
-        talents.append(choice(TALENTS))
-
-    print(f"""
-        {gender}\n
-        {", ".join(attributes)}\n
-        {", ".join(abilities)}\n
-        {", ".join(civil_abilities)}\n
-        {", ".join(talents)} 
-    """)
+        print(f"""
+            {i + 1}
+            Character: {gender}
+            Attributes: {", ".join(attributes)}
+            Abilities: {", ".join(abilities)}
+            Civil Abilities: {", ".join(civil_abilities)}
+            Talents: {", ".join(talents)} 
+        """)
 
 
 if __name__ == "__main__":
