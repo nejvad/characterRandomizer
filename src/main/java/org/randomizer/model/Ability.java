@@ -1,4 +1,21 @@
 package org.randomizer.model;
 
 public enum Ability {
+    DUAL_WIELDING,
+    RANGED,
+    SINGLE_HANDED,
+    TWO_HANDED,
+    LEADERSHIP,
+    PERSEVERANCE,
+    RETRIBUTION,
+    AEROTHEURGE,
+    GEOMANCER,
+    HUNTSMAN,
+    HYDROSOPHIST,
+    NECROMANCER,
+    POLYMORPH,
+    PYROKINETIC,
+    SCOUNDREL,
+    SUMMONING,
+    WARFARE
 }
