@@ -3,20 +3,19 @@ package org.randomizer.model;
 import java.util.List;
 
 public class Character {
-    private String gender;
-    private String race;
+    private Gender gender;
+    private Race race;
     private boolean isUndead;
-    private List<String> attributes;
-    private List<String> abilities;
-    private List<String> civilAbilities;
-    private List<String> talents;
+    private List<Attribute> attributes;
+    private List<Ability> abilities;
+    private List<CivilAbility> civilAbilities;
+    private List<Talent> talents;
 
-    public Character(String gender, String race, boolean isUndead,
-                     List<String> attributes,
-                     List<String> abilities,
-                     List<String> civilAbilities,
-                     List<String> talents) {
-
+    public Character(Gender gender, Race race, boolean isUndead,
+                     List<Attribute> attributes,
+                     List<Ability> abilities,
+                     List<CivilAbility> civilAbilities,
+                     List<Talent> talents) {
         this.gender = gender;
         this.race = race;
         this.isUndead = isUndead;
@@ -26,19 +25,20 @@ public class Character {
         this.talents = talents;
     }
 
-    public String getGender() {
+
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
-    public String getRace() {
+    public Race getRace() {
         return race;
     }
 
-    public void setRace(String race) {
+    public void setRace(Race race) {
         this.race = race;
     }
 
@@ -50,35 +50,35 @@ public class Character {
         isUndead = undead;
     }
 
-    public List<String> getAttributes() {
+    public List<Attribute> getAttributes() {
         return attributes;
     }
 
-    public void setAttributes(List<String> attributes) {
+    public void setAttributes(List<Attribute> attributes) {
         this.attributes = attributes;
     }
 
-    public List<String> getAbilities() {
+    public List<Ability> getAbilities() {
         return abilities;
     }
 
-    public void setAbilities(List<String> abilities) {
+    public void setAbilities(List<Ability> abilities) {
         this.abilities = abilities;
     }
 
-    public List<String> getCivilAbilities() {
+    public List<CivilAbility> getCivilAbilities() {
         return civilAbilities;
     }
 
-    public void setCivilAbilities(List<String> civilAbilities) {
+    public void setCivilAbilities(List<CivilAbility> civilAbilities) {
         this.civilAbilities = civilAbilities;
     }
 
-    public List<String> getTalents() {
+    public List<Talent> getTalents() {
         return talents;
     }
 
-    public void setTalents(List<String> talents) {
+    public void setTalents(List<Talent> talents) {
         this.talents = talents;
     }
 }
